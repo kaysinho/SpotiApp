@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
     this.service.getNewReleases()
       .subscribe(data =>{
         this.releases = data.albums.items;
-        console.log(this.releases)
       })
   }
 

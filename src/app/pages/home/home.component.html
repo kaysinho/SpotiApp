@@ -1,13 +1,5 @@
 <div class="row center">
     <div *ngFor="let release of releases" class="col s12 m3">
-      <div class="card blue-grey darken-4">
-        <div class="card-image">
-          <img src="{{ release.images[0].url }}">
-          <span class="card-title">{{ release.name }}</span>
-        </div>
-        <div class="card-content">
-            <span class="new badge green">{{release.artists[0].name}}</span>
-        </div>
-      </div>
+      <app-card [item]="release" type="release"></app-card>
     </div>
   </div>

@@ -13,12 +13,7 @@
 
 <div class="row center">
     <div *ngFor="let artist of artists" class="col s12 m3">
-      <div class="card blue-grey darken-4">
-        <div class="card-image">
-          <img *ngIf="artist.images.length>0" src="{{ artist.images[0].url }}">
-          <img *ngIf="artist.images.length==0" src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482930.jpg">
-          <span class="card-title">{{ artist.name }}</span>
-        </div>
-      </div>
+      <app-card [item]="artist" type="artist"></app-card>
+
     </div>
   </div>

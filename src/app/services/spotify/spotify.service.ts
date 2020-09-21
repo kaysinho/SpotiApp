@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SpotifyService {
-  token : string ="BQDCsU3cMsHgKWYKlEV2A7J5qAbLEZvo6ykAcUWStj73lN4Ri8bDq8D_-JQnKwbcQf9kISKog4aa7mXuoTc"
+  token : string ="BQCotZrbGioZPVdpLyqJtn3QPBKx4I0a6hxsCm6gA5Nii9E2GXDHsdAgbSOyJ_rGecsfiwopLEl7s0JMDYM"
   constructor(private http:HttpClient) { }
 
   getNewReleases():Observable<any>{
@@ -23,5 +23,21 @@ export class SpotifyService {
     })
 
     return this.http.get(`https://api.spotify.com/v1/search?q=${artist}&type=artist&limit=15`, {headers})
+  }
+
+  getArtist(id:string){
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${this.token}`
+    })
+
+    return this.http.get(`https://api.spotify.com/v1/artists/${id}`, {headers})
+  }
+
+  getTopTracks(idArtist:string){
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${this.token}`
+    })
+
+    return this.http.get(`https://api.spotify.com/v1/artists/${idArtist}/top-tracks?country=US`, {headers})
   }
 }

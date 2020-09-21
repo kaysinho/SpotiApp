@@ -5,3 +5,15 @@ body{
 .container{
     margin-top: 20px;
 }
+
+.pointer{
+    cursor: pointer;
+}
+
+tr{
+    border-bottom: 1px solid rgba(240, 240, 240, 1);
+}
+
+.album-img{
+    width: 50px;
+}

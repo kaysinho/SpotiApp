@@ -15,9 +15,9 @@ export class SearchComponent implements OnInit {
   }
 
   searchArtist(search:string){
+    if (search == "") return;
     this.service.searchArtist(search)
       .subscribe( data => {
-        console.log(data.artists.items)
         this.artists = data.artists.items
       })
   }

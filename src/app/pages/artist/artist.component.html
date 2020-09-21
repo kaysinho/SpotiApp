@@ -1,1 +1,43 @@
-<p>artist works!</p>
+<div class="col s12 m8 offset-m2 l6 offset-l3">
+    <div class="card-panel grey darken-4 z-depth-1">
+      <div class="row valign-wrapper" *ngIf="artist">
+        <div class="col s2">
+          <img src="{{ artist.images[0].url }}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+        </div>
+        <div class="col s10">
+            <h4>{{ artist.name }}</h4>
+          <span class="white-text">
+            Generos: {{ artist.genres.join(', ') }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="col m12">
+        <thead>
+          <tr>
+              <th>Picture</th>
+              <th>Album</th>
+              <th>Name</th>
+              <th>Track</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let track of tracks">
+            <td>
+                <img class="circle responsive-img album-img" src="{{ track.album.images[0].url }}">
+            </td>
+            <td>{{ track.album.name }}</td>
+            <td>{{ track.name }}</td>
+            <td>
+                <iframe [src]="track.uri | securedom" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <!--<audio src="{{ track.preview_url }}" controls></audio>-->
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+  </div>

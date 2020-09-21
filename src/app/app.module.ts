@@ -9,6 +9,8 @@ import { ArtistComponent } from './pages/artist/artist.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpotifyService } from './services/spotify/spotify.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './components/card/card.component';
+import { SecuredomPipe } from './pipes/securedom.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardComponent,
+    SecuredomPipe
   ],
   imports: [
     BrowserModule,

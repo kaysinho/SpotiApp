@@ -1,0 +1,17 @@
+<div class="card blue-grey darken-4" *ngIf="type == 'release'" >
+    <div class="card-image">
+      <img src="{{ item.images[0].url }}">
+      <span class="card-title">{{ item.name }}</span>
+    </div>
+    <div class="card-content">
+        <span class="new badge green">{{item.artists[0].name}}</span>
+    </div>
+  </div>
+
+  <div class="card blue-grey darken-4 pointer" *ngIf="type == 'artist'" (click)="goToArtistPage()">
+    <div class="card-image">
+      <img *ngIf="item.images.length>0" src="{{ item.images[0].url }}">
+      <img *ngIf="item.images.length==0" src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482930.jpg">
+      <span class="card-title">{{ item.name }}</span>
+    </div>
+  </div>
